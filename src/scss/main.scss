@@ -1,0 +1,16 @@
+// Base
+@import 'base/reset';
+@import 'base/variables';
+
+// Components
+@import 'components/typography';
+@import 'components/animations';
+@import 'components/base';
+@import 'components/header';
+@import 'components/nav';
+@import 'components/footer';
+
+// Pages
+@import 'pages/index';
+@import 'pages/projects';
+@import 'pages/about';

@@ -1,0 +1,26 @@
+{% set page_title = "Home" %}
+<!-- {% set body_class = "home" %} -->
+{% set file_root = "./" %}
+{% extends "_layout.njk" %}
+
+{% block content %}
+  <section class="home">
+    <div>
+      <h1 class="text-focus-in delay-short">Hi, I'm John.</h1>
+      <h2 class="text-focus-in delay-short">I'm a front-end web developer<br/>trying to make the web more human.</h2>
+      <div class="arrow-container text-focus-in delay-short">
+        <a class="arrow pulsate delay-long" href="#projects">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+              <path d="M17.418 6.109a.697.697 0 0 1 .979 0 .68.68 0 0 1 0 .969l-7.908 7.83a.697.697 0 0 1-.979 0l-7.908-7.83a.68.68 0 0 1 0-.969.697.697 0 0 1 .979 0L10 13.25l7.418-7.141z" fill="#626262"/>
+            </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="projects" id="projects">
+    <h3>Projects</h3>
+  </section>
+  <section class="about" id="about">
+    <h3>About</h3>
+  </section>
+{% endblock %}

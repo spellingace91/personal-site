@@ -1,0 +1,74 @@
+.home {
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  h1 {
+    font-family: $header-font-stack;
+    font-size: 4.326em;
+  }
+  h2 {
+    color: #3B73B0;
+  }
+}
+
+.arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+}
+
+.arrow {
+  display: inline-block;
+  margin-top: 50px;
+  width: 25px;
+
+  &:hover,
+  &:focus {
+    animation: none;
+    transform: scale(1.5);
+  }
+
+  path {
+    fill: #ccc;
+    transition: fill 0.2s ease-out;
+  }
+
+  svg:hover path,
+  svg:focus path {
+    fill: #fff;
+    transition: fill 0.2s ease-out;
+  }
+}
+
+@media (min-width: 500px) {
+  .home {
+    > div {
+      align-items: unset;
+      text-align: unset;
+    }
+  }
+
+  .arrow-container {
+    align-self: center;
+  }
+
+  .arrow {
+    transition: transform 0.2s ease;
+  }
+}
+
+@media (min-width: 2000px) {
+  .home {
+    h1 {
+      font-size: 7rem;
+    }
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+}

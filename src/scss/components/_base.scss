@@ -1,0 +1,59 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $body-font-stack;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #000000;
+  color: $text-color;
+}
+
+main {
+  height: 300vh;
+}
+
+.content-container {
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.content {
+  height: calc(100vh - 68px);
+}
+
+section {
+  height: calc(100vh - 68px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 500px) {
+  .photo-wrapper {
+    background-image: url('../img/blue-ridge-sunset.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    min-height: 24rem;
+    z-index: -1;
+  }
+
+  .content-container {
+    width: 72em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .content,
+  section {
+    height: calc(100vh - 60px);
+    height: 100vh;
+  }
+}

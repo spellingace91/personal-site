@@ -1,0 +1,62 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+  background-color: rgba(0,0,0,0.7);
+
+  li a {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    display: block;
+    margin: 0 0 0.5em;
+    padding: 28px 40px;
+  }
+}
+
+// active link styling
+body {
+  &.home nav-home a,
+  &.projects nav-projects a,
+  &.about nav-about a {
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 500px) {
+  nav {
+    opacity: 0;
+    background-color: rgba(0,0,0,0.7);
+  
+    .menu {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+      max-height: initial;
+      background: none;
+
+      &:hover li:not(:hover) {
+        opacity: 0.5;
+      }
+    }
+
+    li {
+      transition: opacity linear 0.15s;
+
+      a {
+        display: inline-block;
+        padding: 1em 2em;
+      }
+    }
+  }
+}

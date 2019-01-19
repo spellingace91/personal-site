@@ -1,0 +1,455 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.pulsate {
+  -webkit-animation: pulsate 3s ease-in-out infinite forwards;
+  animation: pulsate 3s ease-in-out infinite forwards;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Basier Square", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #000000;
+  color: #fcf0e0;
+}
+
+main {
+  height: 300vh;
+}
+
+.content-container {
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.content {
+  height: calc(100vh - 68px);
+}
+
+section {
+  height: calc(100vh - 68px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: right;
+}
+
+header h1 {
+  float: left;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 32px 20px;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+header .menu-icon .navicon {
+  background: #fff;
+  display: block;
+  height: 4px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 32px;
+}
+
+header .menu-icon .navicon:before,
+header .menu-icon .navicon:after {
+  background: #fff;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+header .menu-icon .navicon:before {
+  top: 12px;
+}
+
+header .menu-icon .navicon:after {
+  top: -12px;
+}
+
+header .menu-btn {
+  display: none;
+}
+
+header .menu-btn:checked ~ nav .menu {
+  max-height: 328px;
+}
+
+header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+header .menu-btn:checked ~ .menu-icon .navicon:before {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+header .menu-btn:checked ~ .menu-icon .navicon:after {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+header .menu-btn:checked ~ .menu-icon {
+  background-color: #3B73B0;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.menu li a {
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  display: block;
+  margin: 0 0 0.5em;
+  padding: 28px 40px;
+}
+
+body.home nav-home a,
+body.projects nav-projects a,
+body.about nav-about a {
+  font-weight: bold;
+}
+
+.home > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.home h1 {
+  font-family: "Vidaloka", "Crimson Text", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  font-size: 4.326em;
+}
+
+.home h2 {
+  color: #3B73B0;
+}
+
+.arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+}
+
+.arrow {
+  display: inline-block;
+  margin-top: 50px;
+  width: 25px;
+}
+
+.arrow:hover,
+.arrow:focus {
+  -webkit-animation: none;
+  animation: none;
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+.arrow path {
+  fill: #ccc;
+  transition: fill 0.2s ease-out;
+}
+
+.arrow svg:hover path,
+.arrow svg:focus path {
+  fill: #fff;
+  transition: fill 0.2s ease-out;
+}
+
+@media (min-width: 400px) {
+  footer {
+    text-align: right;
+    padding: 10px 6.43%;
+  }
+}
+
+@media (min-width: 500px) {
+  /**
+  * ----------------------------------------
+  * animation text-focus-in
+  * ----------------------------------------
+  */
+
+@-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+      filter: blur(12px);
+      opacity: 0;
+    }
+
+    100% {
+      -webkit-filter: blur(0px);
+      filter: blur(0px);
+      opacity: 1;
+    }
+}
+
+@keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+      filter: blur(12px);
+      opacity: 0;
+    }
+
+    100% {
+      -webkit-filter: blur(0px);
+      filter: blur(0px);
+      opacity: 1;
+    }
+}
+
+@-webkit-keyframes slide-down-fade-in {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(-25px);
+      transform: translateY(-25px);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+}
+
+@keyframes slide-down-fade-in {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(-25px);
+      transform: translateY(-25px);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+}
+
+  .text-focus-in {
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  }
+
+  .slide-down-fade-in {
+    -webkit-animation: slide-down-fade-in 1s ease 1 forwards;
+    animation: slide-down-fade-in 1s ease 1 forwards;
+  }
+
+  .fade-in {
+    -webkit-animation: fade-in 1s ease 1 forwards;
+    animation: fade-in 1s ease 1 forwards;
+  }
+
+  .delay-short {
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+  }
+
+  .delay-long {
+    -webkit-animation-delay: 2.5s;
+    animation-delay: 2.5s;
+  }
+
+  .photo-wrapper {
+    background-image: url("../img/blue-ridge-sunset.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    min-height: 24rem;
+    z-index: -1;
+  }
+
+  .content-container {
+    width: 72em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .content,
+  section {
+    height: calc(100vh - 60px);
+    height: 100vh;
+  }
+
+  header {
+    height: 60px;
+    background: transparent;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  header .menu-icon {
+    display: none;
+  }
+
+  nav {
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  nav .menu {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    max-height: initial;
+    background: none;
+  }
+
+  nav .menu:hover li:not(:hover) {
+    opacity: 0.5;
+  }
+
+  nav li {
+    transition: opacity linear 0.15s;
+  }
+
+  nav li a {
+    display: inline-block;
+    padding: 1em 2em;
+  }
+
+  .home > div {
+    align-items: unset;
+    text-align: unset;
+  }
+
+  .arrow-container {
+    align-self: center;
+  }
+
+  .arrow {
+    transition: -webkit-transform 0.2s ease;
+    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  }
+}
+
+@media (min-width: 2000px) {
+  .home h1 {
+    font-size: 7rem;
+  }
+
+  .home h2 {
+    font-size: 2.5rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
